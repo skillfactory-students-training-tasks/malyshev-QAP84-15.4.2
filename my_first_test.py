@@ -5,7 +5,7 @@ ideal_dict = {'timestamp': int, 'referer': str, 'location': str, 'remoteHost': s
        'item_url': str, 'basket_price': str, 'detectedDuplicate': bool, 'detectedCorruption': bool,
        'firstInSession': bool, 'userAgentName': str}
 
-with open('package2.json', encoding='utf8') as f:
+with open('data.json', encoding='utf8') as f:
     dict_list = json.load(f)
 
 def check_dict(dict):
