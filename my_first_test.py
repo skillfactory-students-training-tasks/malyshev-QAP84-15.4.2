@@ -5,9 +5,6 @@ ideal_dict = {'timestamp': int, 'referer': str, 'location': str, 'remoteHost': s
        'item_url': str, 'basket_price': str, 'detectedDuplicate': bool, 'detectedCorruption': bool,
        'firstInSession': bool, 'userAgentName': str}
 
-with open('data.json', encoding='utf8') as f:
-    dict_list = json.load(f)
-
 def check_dict(dict):
 
     answer = "  Пройденные тесты: "
@@ -112,15 +109,14 @@ def check_dict(dict):
 
     if keys_error == False:
         extra_keys = temp_dict.keys() - ideal_dict.keys()
-        print("Лишние ключи " + str(extra_keys) + " Общее количество ошибок " + str(answer_count) + answerr)
+        print("Общее количество ошибок " + str(answer_count) + "  Лишние ключи " + str(extra_keys) + answerr)
     else:
         print("Общее количество ошибок " + str(answer_count) + answerr)
 
-
+with open('data.json', encoding='utf8') as f:
+    dict_list = json.load(f)
 
 i = 0
-
 while i != len(dict_list):
     check_dict(dict_list[i])
     i += 1
-
